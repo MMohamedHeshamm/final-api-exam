@@ -1,27 +1,51 @@
 <!doctype html>
 <html lang="en">
+
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="color-scheme" content="dark">
-  <meta name="theme-color" content="#101421">
-  <meta name="description" content="Project-specific ASP.NET Core API practical knowledge assessment.">
-  <title>Final API Session · Technical Assessment</title>
-  <link rel="stylesheet" href="style.css">
-  <script defer src="https://cdn.sheetjs.com/xlsx-0.20.3/package/dist/xlsx.full.min.js"></script>
-  <script defer src="script.js"></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Final API Exam — Classroom</title>
+    <meta name="robots" content="noindex">
+    <meta name="referrer" content="no-referrer">
+    <style>
+        body {
+            font: 16px/1.5 system-ui, sans-serif;
+            background: #101625;
+            color: #e8f3ff;
+            display: grid;
+            place-items: center;
+            min-height: 95vh;
+            margin: 0
+        }
+
+        main {
+            text-align: center;
+            max-width: 550px;
+            padding: 30px
+        }
+
+        a {
+            color: #7defca
+        }
+    </style>
 </head>
+
 <body>
-  <div class="ambient ambient-a" aria-hidden="true"></div><div class="ambient ambient-b" aria-hidden="true"></div>
-  <header class="site-header">
-    <div class="header-content">
-      <div class="brand"><span class="brand-mark">{ }</span><span><strong>API<span class="brand-light">/</span>ASSESS</strong><small>ENGINEERING EVALUATION</small></span></div>
-      <div class="header-right"><span class="status-dot"></span> Final API Session <span class="divider-vertical"></span><span class="header-pill">ASP.NET Core 8</span></div>
-    </div>
-  </header>
-  <main id="app" class="app" aria-live="polite"></main>
-  <footer class="footer">FinalAPISession project assessment <span>·</span> Client-side focus monitoring and autosaved progress</footer>
-  <div id="modal-layer" aria-live="assertive"></div>
-  <noscript><p class="noscript">JavaScript is required to take this exam.</p></noscript>
+    <main>
+        <h1>Final API Exam</h1>
+        <p>Opening the secure classroom assessment…</p>
+        <p id="fallback">If you are not redirected automatically, <a id="go" href="#">open the exam here</a>.</p>
+    </main>
+    <script>
+        const EXAM_URL = 'https://script.google.com/macros/s/AKfycbztQsSacXTvYsJH8mSG3yDQGUnT1LctGARMAbNsKoamejkn93mBWuhcnWRyR5_rkGwN/exec';
+        if (/^https:\/\/script\.google\.com\/macros\/s\/[\w-]+\/exec$/.test(EXAM_URL)) {
+            document.getElementById('go').href = EXAM_URL;
+            window.location.replace(EXAM_URL);
+        } else {
+            document.querySelector('main p').textContent = 'Teacher configuration needed. The secure exam link is not set yet.';
+            document.getElementById('fallback').hidden = true;
+        }
+    </script>
 </body>
+
 </html>
